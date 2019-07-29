@@ -1,0 +1,24 @@
+package config
+
+import (
+	"fmt"
+
+	"gopkg.in/mgo.v2"
+)
+
+// MongoInit initialize mongodb
+func MongoInit() (db *mgo.Database, err error) {
+
+	mongoAddrs := "localhost:27017"
+	mongoDatabase := "driving"
+
+	conn, err := mgo.Dial("mongodb://" + mongoAddrs)
+	if err != nil {
+		fmt.Printf("Error: %s", err)
+	}
+
+	db = conn.DB(mongoDatabase)
+
+	return db, err
+
+}

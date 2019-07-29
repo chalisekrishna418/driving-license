@@ -1,6 +1,9 @@
 # build directories
 /build/
 
+# config files
+config/*.go
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
