@@ -3,7 +3,7 @@ package handlers
 import (
 	"fmt"
 
-	"github.com/chalisekrishna418/driving-license/config"
+	"github.com/zero2her0/driving-license/config"
 
 	"github.com/gin-gonic/gin"
 )
