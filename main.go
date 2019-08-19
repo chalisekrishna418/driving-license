@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/chalisekrishna418/driving-license/handlers"
 	"github.com/gin-gonic/gin"
+	"github.com/zero2her0/driving-license/handlers"
 )
 
 func main() {
