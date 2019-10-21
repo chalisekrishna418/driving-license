@@ -13,7 +13,7 @@ import (
 var confFile = "config/db.json"
 
 type mongoConfig struct {
-	Host     string `json:"hostname" binding:"required"`
+	Host     string `json:"host" binding:"required"`
 	Port     string `json:"port" binding:"required"`
 	Database string `json:"database" binding:"required"`
 	Username string `json:"username"`

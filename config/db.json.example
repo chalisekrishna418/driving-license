@@ -1,7 +1,7 @@
 {
-	'host': 'localhost',
-	'port': '27017',
-	'database': 'driving',
-	'username': 'un',
-	'password': 'pwd'
+	"host": "localhost",
+	"port": "27017",
+	"database": "driving",
+	"username": "un",
+	"password": "pwd"
 }
