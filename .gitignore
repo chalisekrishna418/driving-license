@@ -2,7 +2,7 @@
 /build/
 
 # config files
-config/*.go
+config/*.json
 
 # Binaries for programs and plugins
 *.exe

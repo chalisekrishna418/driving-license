@@ -3,33 +3,22 @@ package handlers
 import (
 	"fmt"
 
-	"github.com/zero2her0/driving-license/config"
+	"github.com/zero2her0/driving-license/models"
+	"github.com/zero2her0/driving-license/utils"
 
 	"github.com/gin-gonic/gin"
 )
 
 // AddQuestions function for reading the questions and prepare for putting into database
 func AddQuestions(c *gin.Context) {
-	db, err := config.MongoInit()
-	if err != nil {
-		fmt.Printf("Error: %s", err)
+
+	ques := models.Questions{}
+	bindErr := c.ShouldBind(&ques)
+	if bindErr != nil {
+		fmt.Printf("Error: %s", bindErr)
 	}
 
-	question := c.Query("question")
-	correctAns := c.Query("correct_answer")
-	option1 := c.Query("option1")
-	option2 := c.Query("option2")
-	option3 := c.Query("option3")
-
-	coll := db.C("questions")
-	data := gin.H{
-		"question":       question,
-		"correct_answer": correctAns,
-		"option1":        option1,
-		"option2":        option2,
-		"option3":        option3,
-	}
-	insErr := coll.Insert(data)
+	insErr := utils.Insert(ques, "questions")
 	if insErr != nil {
 		fmt.Printf("Error: %s", insErr)
 	}
